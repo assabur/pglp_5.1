@@ -46,7 +46,6 @@ public class Serializable_test {
 	{
 		
 		Affichage_groupe affiche=new Affichage_groupe(composite1);
-
 		affiche.serializable_Personnel();
        }
 }

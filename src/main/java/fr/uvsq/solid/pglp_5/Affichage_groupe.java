@@ -78,8 +78,6 @@ public class Affichage_groupe implements java.io.Serializable
 		/* 
 		 * methode implementant la serialisation d'une hierarchie
 		 * on initialise notre fichier des valeurs de notre tableau contenant des personnes
-		 * on initialise notre fichier des valeurs de notre tableau contenant des personnes
-		 * on initialise notre fichier des valeurs de notre tableau contenant des personnes
 		 */
 		public void serializable_Personnel()
 		{		
