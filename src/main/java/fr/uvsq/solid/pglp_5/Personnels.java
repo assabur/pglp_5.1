@@ -1,10 +1,11 @@
 package fr.uvsq.solid.pglp_5;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 /*
  * definition de la classe personnel
  */
-public final class  Personnels implements Interface_Personnel  {
+public final class  Personnels implements Interface_Personnel,Serializable  {
 	
 	/*
 	 * constructeur prend en entré un builder

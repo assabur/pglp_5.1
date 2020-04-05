@@ -1,4 +1,4 @@
-package fr.uvsq.solid.pglp_5;
+ package fr.uvsq.solid.pglp_5;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,16 +38,17 @@ public class Serializable_test {
 		composite3.add(composite4);
 		composite4.add(personnel6);
 		composite4.add(personnel7);
-		ip.add(composite1);
-	
+		ip.add(composite1);	
 	}
 	@Test
 	public void serializable_Test()
-	{
-		
+	{	
 		Affichage_groupe affiche=new Affichage_groupe(composite1);
+		
 		affiche.serializable_Personnel();
-       }
+		affiche.deserializable_Personnel();
+		
+    }
 }
 
 

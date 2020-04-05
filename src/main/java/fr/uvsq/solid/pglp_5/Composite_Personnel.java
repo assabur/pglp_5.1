@@ -1,10 +1,11 @@
 package fr.uvsq.solid.pglp_5;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /*
  * classe qui definit un composite de notre hierarchie 
  */
-public class Composite_Personnel implements Interface_Personnel {
+public class Composite_Personnel implements Interface_Personnel,Serializable {
 	private int id;
 	public Composite_Personnel(int id)
 	{
