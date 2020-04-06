@@ -18,7 +18,7 @@ public class SerialisationFactory
 	 * permet d'ecrire un objet dans un fichier
 	 * @param 
 	 */
-	public Interface_Personnel writeFile(Interface_Personnel obj, String filename, Flash log) 
+	public Personnels writeFile(Personnels obj, String filename, Flash log) 
 	{
 		try (ObjectOutputStream	out = new ObjectOutputStream(
 				new BufferedOutputStream(new FileOutputStream(filename)))) {
@@ -53,12 +53,22 @@ public class SerialisationFactory
 	/*
 	 * methode qui permet de lire le contenu d'un fichier
 	 */
-	public Interface_Personnel readFile(String filename, Flash log) {
+	public Personnels readFile(String filename,Flash log,int id) {
 		try (ObjectInputStream in = new ObjectInputStream(
 				new BufferedInputStream(new FileInputStream(filename)))) {
-			Interface_Personnel obj = (Interface_Personnel) in.readObject();
-			log.affiche("Objet " + obj + " lu!");
-			return obj;
+			
+			int test_id=0;boolean seuil=false;
+			while( in.readObject() !=null)
+			{
+				Personnels obj = (Personnels) in.readObject();
+				 test_id =obj.getid();
+				 if(test_id==id)
+				 {
+					 log.affiche("Objet "+" trouvé!");
+					 return obj;   
+				 }
+			}
+		return null;
 		} catch (ClassNotFoundException | IOException e) {
 			log.affiche(e.getMessage());
 			return null;
@@ -67,7 +77,7 @@ public class SerialisationFactory
 	/*
 	 * méthode de création de fichier
 	 */
-	public Interface_Personnel createFile(Interface_Personnel obj, String filename, Flash log) {
+	public Personnels createFile(Personnels obj, String filename, Flash log) {
 		if (exists(filename)) {
 			log.affiche("Création impossible");
 			return null;
@@ -80,7 +90,7 @@ public class SerialisationFactory
 	/*
 	 * mise à jour d'un object dans le fichier
 	 */
-	public Interface_Personnel updateFile(Interface_Personnel obj, String filename, Flash log) {
+	public Personnels updateFile(Personnels obj, String filename, Flash log) {
 		if (!exists(filename)) {
 			log.affiche("Mise à jour impossible");
 			return null;

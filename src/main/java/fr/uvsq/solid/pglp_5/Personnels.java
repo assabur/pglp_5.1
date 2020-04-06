@@ -22,7 +22,14 @@ public final class  Personnels implements Interface_Personnel,Serializable  {
 		    fonction=builder.fonction;
 		    date_naiss=builder.date_naiss;
 	}
-
+	
+	 /*
+	   * methode qui retourne le id d'un personnel
+	   */
+	 public int getid()
+	  {
+		  return this.id;
+	  }
 		/*
 		 * définition des parametres requis de notre builder
 		 */
@@ -94,5 +101,6 @@ public final class  Personnels implements Interface_Personnel,Serializable  {
 	  {
 		  return new Personnels(this);	  
 	  }
+
   }
 }

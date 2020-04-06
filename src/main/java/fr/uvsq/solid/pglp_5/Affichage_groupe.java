@@ -98,7 +98,7 @@ public class Affichage_groupe implements Serializable
 						{	
 							 for (Interface_Personnel personne : ((Composite_Personnel)tab.get(index)).personnel )
 							{ 		      
-								 oos.writeObject(personne );		
+								 oos.writeObject(personne );
 						    }				
 						}
 					   oos.writeObject(((Composite_Personnel)tab.get(index)).personnel );	

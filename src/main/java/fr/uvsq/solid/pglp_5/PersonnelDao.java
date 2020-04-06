@@ -1,28 +1,32 @@
 package fr.uvsq.solid.pglp_5;
 
-public class PersonnelDao extends DAO<Interface_Personnel>
+public class PersonnelDao extends DAO<Personnels>
 {
 
+	SerialisationFactory Factory=new SerialisationFactory();
+	private Flash log=new Flash();
+	private String filename="crud.save";
+	
 	@Override
-	public Interface_Personnel create(Interface_Personnel obj) {
+	public Personnels create (Personnels obj) 
+	{	
+		return Factory.writeFile(obj, filename, log);
+	}
+
+	@Override
+	public Personnels find(int id) {
 		
-		return null;
+		return Factory.readFile(this.filename,this.log,id);
 	}
 
 	@Override
-	public Interface_Personnel find(String id) {
+	public Personnels update(Personnels obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Interface_Personnel update(Interface_Personnel obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(Interface_Personnel obj) {
+	public void delete(Personnels obj) {
 		// TODO Auto-generated method stub
 		
 	}
