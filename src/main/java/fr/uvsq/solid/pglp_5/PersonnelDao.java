@@ -21,13 +21,14 @@ public class PersonnelDao extends DAO<Personnels>
 
 	@Override
 	public Personnels update(Personnels obj) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void delete(Personnels obj) {
-		// TODO Auto-generated method stub
+		
+		Factory.readFile(this.filename, this.log, obj.getid());
 		
 	}
 

@@ -39,6 +39,21 @@ public final class  Personnels implements Interface_Personnel,Serializable  {
 		 private String fonction;
 		 private LocalDateTime date_naiss;
 		 private ArrayList<Integer> telephone =new ArrayList<Integer>();
+		 
+		
+		 /*
+		  * pour changer le nom
+		  */
+		public void setNom(String nom) {
+			this.nom = nom;
+		}
+		/*
+		 * pour changer le prenom
+		 */
+		public void setPrenom(String prenom) {
+			this.prenom = prenom;
+		}
+
 	/*
 	 * 	methode d'affichage du personnel de l'hierarchie
 	 */
@@ -77,6 +92,22 @@ public final class  Personnels implements Interface_Personnel,Serializable  {
 		  this.id=id;
 		  this.nom=nom;
 		  this.prenom=prenom;  
+	  }
+	  /*
+	   * methode servant a modifier le parametre nom
+	   */
+	  public Builder name_change(String new_name)
+	  {
+		  this.nom=new_name;
+		  return this;  
+	  }
+	  /*
+	   * methode servant a modifier le parametre prenom
+	   */
+	  public Builder surname_change(String new_surname)
+	  {
+		  this.prenom=new_surname;
+		  return this;  
 	  }
 	  /*
 	   * methode servant a modifier le parametre optionnel fonction

@@ -2,7 +2,8 @@ package fr.uvsq.solid.pglp_5;
 /*
  * classe abstraite des differentes methodes du CRUD
  */
-public abstract class DAO<T> {
+public abstract class DAO<T> 
+{
 	public abstract T create (Personnels obj);
 	public abstract T find (int id);
 	public abstract T update (T obj);
