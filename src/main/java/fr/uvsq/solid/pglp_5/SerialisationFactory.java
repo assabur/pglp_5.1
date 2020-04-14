@@ -55,7 +55,9 @@ public class SerialisationFactory
 						 if(test_id==id)						 
 						 fichierTampon.add(obj) ;  
 						 			
-			        }			
+			        }	
+					this.deleteFile(filename, log);
+					this.copyInfile(fichierTampon, filename);
 				}
 				catch (ClassNotFoundException | IOException e)
 				{
@@ -120,8 +122,7 @@ public class SerialisationFactory
 				 		return obj;
 			}
 								 
-					
-			
+							
 	/*
 	 * verifie l'existence d'un fichier
 	 * 
@@ -154,33 +155,26 @@ public class SerialisationFactory
 					 
 					 return obj;   
 				 }
+				
 			}
-		return null;
-		} catch (ClassNotFoundException | IOException e) {
+			return null;
+		
+		} 
+		catch (ClassNotFoundException | IOException e) 
+		{			
+			System.out.println("erreur lors de la verification de l'ID");		
 			
-			System.out.println("erreur lors de la verification de l'ID");
 		}
-		return false;
+		finally
+		{
+			return null;
+		}
+		
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/*
-	 * permet d'ecrire un objet dans un fichier
-	 * @param 
+	 * methode de creation d'un objet dans un fichier
 	 */
 	
 	public Personnels writeFile(Personnels obj, String filename, Flash log) 
@@ -211,12 +205,12 @@ public class SerialisationFactory
 		}
 	}*/
 	/*méthode qui crée un nouveau fichier 
-	 */
+	 *
 	public File createFile(Personnels obj,String filename,Flash log)
 	{
 		if(exix)
 	}
-	
+	*/
 	/*
 	 * je verifie si le fichier existe deja
 	 */
@@ -254,7 +248,7 @@ public class SerialisationFactory
 	
 	/*
 	 * methode qui permet de supprimer un objet dans le fichier
-	 */
+	 *
 	public Personnels deleteFile(String filename,Flash log,int id) {
 	if (exists(id))
 	{	try (ObjectInputStream in = new ObjectInputStream(
@@ -284,7 +278,7 @@ public class SerialisationFactory
 	
 	/*
 	 * mise à jour d'un object dans le fichier
-	 */
+	 *
 	public Personnels updateFile(Personnels obj, String filename, Flash log) {
 		if (!exists(filename)) {
 			log.affiche("Mise à jour impossible");
@@ -295,5 +289,5 @@ public class SerialisationFactory
 			writeFile(obj, filename, log);
 			return obj;
 		}
-	}
+	}*/
 }
