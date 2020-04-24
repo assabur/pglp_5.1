@@ -102,19 +102,19 @@ public class SerialisationFactory
 			{
 				 final Scanner reponse=new Scanner(System.in);
 				 String chaine="";
-				 System.out.println("Tapez 1 pour modifier le nom /n 2 pour modifier le prenom ");
+				 Flash.affiche("Tapez 1 pour modifier le nom /n 2 pour modifier le prenom ");
 				int rep= reponse.nextInt();
 				 switch(rep)
 				 {
 				 	case(1):
 				 	{
-				 		System.out.println("entrez le nom ");				 	
+				 		Flash.affiche("entrez le nom ");				 	
 				    	chaine=reponse.nextLine();
 				    	obj.setNom(chaine);
 				 	}break;
 				 	case(2):
 				 	{
-				 		System.out.println("entrez le prenom ");				 	
+				 		Flash.affiche("entrez le prenom ");				 	
 				    	chaine=reponse.nextLine();
 				    	obj.setPrenom(chaine);
 				 	}break;

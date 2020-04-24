@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
  */
 public class Flash {
 
-	public void affiche(String text)
+	public static void affiche(String text)
 	{
 		System.out.println(LocalDateTime.now()+": "+text);
 	}

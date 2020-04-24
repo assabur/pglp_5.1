@@ -104,10 +104,10 @@ public class Affichage_groupe implements Serializable
 					   oos.writeObject(((Composite_Personnel)tab.get(index)).personnel );	
 					   index ++;
 					}
-					System.out.println("Serialisation terminée");
+					Flash.affiche("Serialisation terminée");
 					oos.close();
 			} catch (FileNotFoundException e) {
-				 System.out.printf(" fichier non trouvé");
+				Flash.affiche(" fichier non trouvé");
 				e.printStackTrace();
 			} catch (IOException e) {
 				 System.out.printf("erreur d'ecriture dans le fichier personnel");
@@ -130,7 +130,7 @@ public class Affichage_groupe implements Serializable
 		         
 		         do
 		         {
-		        	 personne =(Interface_Personnel) in.readObject();
+		        	 personne = (Interface_Personnel) in.readObject();
 		        	 personne.affiche(); 
 		         }while(personne!=null);
 		         in.close();
@@ -139,15 +139,19 @@ public class Affichage_groupe implements Serializable
 		      } 
 			catch (IOException i)
 			  {
-				System.out.println("Terminé");
+				Flash.affiche("Terminé");
 		         i.printStackTrace(); 
 		      } 
 			
 			 catch (ClassNotFoundException c) 
 			{
-		         System.out.println("personnel non trouvé");
+		         Flash.affiche("personnel non trouvé");
 		         c.printStackTrace();
 		    }
+			catch(ClassCastException e)
+			{
+				Flash.affiche("probleme de cast rencontré");
+			}
 			finally
 			{
 				

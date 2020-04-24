@@ -12,7 +12,7 @@ import org.junit.Test;
 import fr.uvsq.solid.pglp_5.Personnels.Builder;
 
 
-public class Serializable_test {
+public class Deserializable {
 
 	private Composite_Personnel composite1=new Composite_Personnel(1);
 	private Composite_Personnel composite3=new Composite_Personnel(3);
@@ -41,15 +41,14 @@ public class Serializable_test {
 		ip.add(composite1);	
 	}
 	/*
-	 * a laide de ce test j'implemente la serialisation d'un objet composite 
-	 * 
+	 * a laide de ce test j'implemente la deserialisation d'un objet composite 
+	 * n
 	 */
 	@Test
 	public void serializable_Test()
 	{	
-		Affichage_groupe affiche=new Affichage_groupe(composite1);
-		
-		affiche.serializable_Personnel();
+		Affichage_groupe affiche=new Affichage_groupe(composite1);	
+		affiche.deserializable_Personnel();
 		
     }
 }
