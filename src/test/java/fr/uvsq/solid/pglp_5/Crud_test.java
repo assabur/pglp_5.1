@@ -18,8 +18,7 @@ public class Crud_test
 	private Personnels personnel6;
 	private Personnels personnel7;
 	private Personnels personnel5;
-	ArrayList<Interface_Personnel> ip =new ArrayList<Interface_Personnel>();
-	LocalDateTime temp ;
+		
 	@Before
 	public void setup()
 	{
@@ -28,17 +27,14 @@ public class Crud_test
 		personnel6 =new Personnels.Builder(6,"Maiga", "Rahim").build();
 		personnel7 =new Personnels.Builder(7,"Seni", "Allasane").build();
 		personnel5 =new Personnels.Builder(5,"Barro ", "Drissa").build();
-		composite1.add(personnel2);
-		composite1.add(composite3);
-		composite3.add(personnel5);
-		composite3.add(composite4);
-		composite4.add(personnel6);
-		composite4.add(personnel7);
-		ip.add(composite1);	
+		
 	}
 	@Test
 	public void crud_test()
 	{
+		//FabriqueDAO.getPersonneDAO().create(personnel2);
+		FabriqueDAO.getPersonneDAO().update(2);
+		
 		
 	}
 

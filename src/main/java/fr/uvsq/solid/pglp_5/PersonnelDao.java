@@ -20,9 +20,9 @@ public class PersonnelDao extends DAO<Personnels>
 	}
 
 	@Override
-	public Personnels update(Personnels obj) {
+	public void update(int id) {
 		
-		return null;
+		 Factory.Update(id, filename, log);
 	}
 
 	@Override

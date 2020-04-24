@@ -6,6 +6,6 @@ public abstract class DAO<T>
 {
 	public abstract T create (Personnels obj);
 	public abstract T find (int id);
-	public abstract T update (T obj);
+	public abstract void update (int obj);
 	public abstract void delete(T obj);
 }

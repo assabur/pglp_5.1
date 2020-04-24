@@ -40,6 +40,10 @@ public class Serializable_test {
 		composite4.add(personnel7);
 		ip.add(composite1);	
 	}
+	/*
+	 * a laide de ce test j'implemente la serialisation d'un objet composite 
+	 * et egalement sa deserialisation
+	 */
 	@Test
 	public void serializable_Test()
 	{	

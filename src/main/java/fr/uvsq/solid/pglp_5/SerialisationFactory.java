@@ -17,7 +17,8 @@ import java.util.Scanner;
 public class SerialisationFactory
 {	
 	/*
-	 * construction de la methode Update qui prend en entré l'id verifie l'existence de l'objet puis affecte 
+	 * construction de la methode Update qui prend en entré l'id verifie l'existence
+	 *  de l'objet puis affecte 
 	 * les differentes modifications 
 	 * 
 	 */
@@ -53,7 +54,7 @@ public class SerialisationFactory
 						 }
 						//j'enregistre l'objet modifié dans le tableau
 						 if(test_id==id)						 
-						 fichierTampon.add(obj) ;  
+						 fichierTampon.add(tamponPersonnel) ;  
 						 			
 			        }	
 					this.deleteFile(filename, log);
